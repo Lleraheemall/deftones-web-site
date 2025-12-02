@@ -742,16 +742,16 @@ audio::-webkit-media-controls-volume-slider:hover {
     /* усиленное затемнение для текста */
   }
 
-   /* На телефонах картинка не затемняется при наведении */
-   .placeholder-image:hover img {
-     filter: brightness(1);
-     transform: none;
-   }
-   }
-
-  .placeholder-image:hover .gallery-caption {
-    opacity: 1;
+  /* На телефонах картинка не затемняется при наведении */
+  .placeholder-image:hover img {
+    filter: brightness(1);
+    transform: none;
   }
+}
+
+.placeholder-image:hover .gallery-caption {
+  opacity: 1;
+}
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
@@ -771,7 +771,6 @@ audio::-webkit-media-controls-volume-slider:hover {
 }
 /* Мобильное меню, чтобы не занимало весь экран */
 @media (max-width: 768px) {
-
   header {
     position: relative;
     /* убираем "прилипание" на телефонах */
@@ -806,7 +805,6 @@ audio::-webkit-media-controls-volume-slider:hover {
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
-
   .burger {
     display: block;
   }
@@ -899,4 +897,10 @@ audio::-webkit-media-controls-volume-slider:hover {
 #toTopBtn.show {
   opacity: 1;
   visibility: visible;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
