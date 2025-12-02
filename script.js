@@ -10,7 +10,7 @@ function updateHeroFade() {
 
   heroElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, ${
     0.5 + opacity * 0.5
-  }), rgba(0, 0, 0, ${0.5 + opacity * 0.5})), url('img/content/hero.jpg')`;
+  }), rgba(0, 0, 0, ${0.5 + opacity * 0.5})), url('img/header.jpg')`;
 
   ticking = false;
 }
@@ -23,3 +23,27 @@ function onScroll() {
 }
 
 window.addEventListener("scroll", onScroll);
+
+const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+
+burger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+  const toTopBtn = document.getElementById("toTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
