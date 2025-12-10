@@ -807,11 +807,19 @@ audio::-webkit-media-controls-volume-slider:hover {
 @media (max-width: 768px) {
   .burger {
     display: block;
+    cursor: pointer; /* Додано для зручності (курсор-рука) */
   }
 
   nav {
     display: none;
-    width: 100%;
+    position: absolute; /* Вириваємо з потоку, щоб накласти зверху на контент */
+    top: 100%; /* З'являється відразу під шапкою (header) */
+    right: 0; /* Притискаємо до правого краю */
+    width: 250px; /* Встановлюємо фіксовану ширину (можна змінити) */
+    background-color: #000000; /* ОБОВ'ЯЗКОВО: колір фону вашого меню */
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1); /* Тінь для краси */
+    z-index: 1000; /* Щоб меню було поверх іншого контенту */
+    border-radius: 0 0 0 10px; /* Заокруглення нижнього лівого кута (за бажанням) */
   }
 
   nav.active {
@@ -820,19 +828,21 @@ audio::-webkit-media-controls-volume-slider:hover {
 
   nav ul {
     flex-direction: column;
-    text-align: center;
+    text-align: center; /* Або left, якщо хочете вирівняти текст зліва */
     gap: 12px;
-    padding-top: 15px;
+    padding: 20px 0; /* Трохи більше відступів зверху та знизу */
+    margin: 0;
   }
 
   nav a {
     display: block;
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 1.2em;
+    color: #333; /* Переконайтеся, що колір тексту контрастний до фону */
   }
 
   header {
-    position: relative;
+    position: relative; /* Важливо: nav буде позиціонуватися відносно header */
   }
 
   header .container {
